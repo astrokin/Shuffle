@@ -140,7 +140,11 @@ open class SwipeCard: SwipeView {
   override open func didTap(_ recognizer: UITapGestureRecognizer) {
     super.didTap(recognizer)
     internalTouchLocation = recognizer.location(in: self)
-    delegate?.card(didTap: self)
+    if recognizer.location(in: self).x >= self.frame.size.width / 2.0 {
+        delegate?.card(didTap: self, with: .right)
+    } else {
+        delegate?.card(didTap: self, with: .left)
+    }
   }
 
   override open func beginSwiping(_ recognizer: UIPanGestureRecognizer) {

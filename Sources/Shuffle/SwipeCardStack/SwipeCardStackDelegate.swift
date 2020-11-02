@@ -27,7 +27,7 @@ import Foundation
 @objc public protocol SwipeCardStackDelegate: AnyObject {
 
   @objc
-  optional func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int)
+  optional func cardStack(_ cardStack: SwipeCardStack, didSelectCardAt index: Int, with direction: SwipeDirection)
 
   @objc
   optional func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection)

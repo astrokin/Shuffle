@@ -444,9 +444,10 @@ open class SwipeCardStack: UIView, SwipeCardDelegate, UIGestureRecognizerDelegat
 
   // MARK: - SwipeCardDelegate
 
-  func card(didTap card: SwipeCard) {
+  func card(didTap card: SwipeCard,
+            with direction: SwipeDirection) {
     guard let topCardIndex = topCardIndex else { return }
-    delegate?.cardStack?(self, didSelectCardAt: topCardIndex)
+    delegate?.cardStack?(self, didSelectCardAt: topCardIndex, with: direction)
   }
 
   func card(didBeginSwipe card: SwipeCard) {
