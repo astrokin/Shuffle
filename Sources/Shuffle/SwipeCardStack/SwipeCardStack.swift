@@ -196,6 +196,7 @@ open class SwipeCardStack: UIView, SwipeCardDelegate, UIGestureRecognizerDelegat
                    direction: SwipeDirection,
                    forced: Bool,
                    animated: Bool) {
+    if isAnimating { return }
     guard let swipedIndex = topCardIndex else { return }
     stateManager.swipe(direction)
     visibleCards.remove(at: 0)
